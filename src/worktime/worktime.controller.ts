@@ -7,7 +7,7 @@ export class WorktimeController {
   constructor(private workTimeService: WorktimeService) {}
 
   @Get()
-  getWorkTime(@Res() res) {
+  getWorkTime() {
     return this.workTimeService.getWorkTime();
   }
 

@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Connection, Model } from 'mongoose';
 import { WorkTimeDto } from './dto/workTime.dto';
 
 @Injectable()
