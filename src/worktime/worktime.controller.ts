@@ -1,14 +1,14 @@
-import { Body, Controller, Get, Patch, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, Res } from '@nestjs/common';
 import { WorkTimeDto } from './dto/workTime.dto';
 import { WorktimeService } from './worktime.service';
 
 @Controller('worktime')
 export class WorktimeController {
-  constructor(private workTimeService: WorktimeService) {}
+  constructor(private readonly workTimeService: WorktimeService) {}
 
   @Get()
-  getWorkTime() {
-    return this.workTimeService.getWorkTime();
+  getWorkTime(@Param() startDate: string, @Param() endDate: string) {
+    return this.workTimeService.getWorkTime(startDate, endDate);
   }
 
   @Post()

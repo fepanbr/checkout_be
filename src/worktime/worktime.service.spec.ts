@@ -15,4 +15,6 @@ describe('WorktimeService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  describe('/worktime (GET)', () => {});
 });

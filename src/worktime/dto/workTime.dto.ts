@@ -1,5 +1,5 @@
 export class WorkTimeDto {
-  startDt: string;
-  endDt?: string;
-  userId: number;
+  readonly startDt: string;
+  readonly endDt: string;
+  readonly userId: number;
 }

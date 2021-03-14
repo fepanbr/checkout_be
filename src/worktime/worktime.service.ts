@@ -9,8 +9,8 @@ export class WorktimeService {
 
   async findAll() {}
 
-  getWorkTime(): string {
-    return 'getWork!';
+  getWorkTime(startDate: string, endDate: string) {
+    return '';
   }
 
   saveTime(dto: WorkTimeDto) {
