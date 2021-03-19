@@ -1,9 +1,25 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './user/user.entity';
+import { UserModule } from './user/user.module';
 import { WorktimeModule } from './worktime/worktime.module';
 
 @Module({
-  imports: [WorktimeModule],
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: 'root',
+      database: 'check_database',
+      synchronize: true,
+      autoLoadEntities: true,
+      entities: [__dirname + '/entity/*.js'],
+    }),
+    WorktimeModule,
+    UserModule,
+  ],
   controllers: [],
   providers: [],
 })

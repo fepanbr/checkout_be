@@ -8,7 +8,8 @@ export class WorktimeController {
 
   @Get()
   getWorkTime(@Param() startDate: string, @Param() endDate: string) {
-    return this.workTimeService.getWorkTime(startDate, endDate);
+    // return this.workTimeService.getWorkTime(startDate, endDate);
+    return this.workTimeService.findAll();
   }
 
   @Post()
