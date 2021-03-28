@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './user/user.entity';
+import { User } from './user/entity/user.entity';
 import { UserModule } from './user/user.module';
 import { WorktimeModule } from './worktime/worktime.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { WorktimeModule } from './worktime/worktime.module';
     }),
     WorktimeModule,
     UserModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],

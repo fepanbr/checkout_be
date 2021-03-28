@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Param, Patch, Post, Res } from '@nestjs/common';
 import { WorkTimeDto } from './dto/workTime.dto';
+import { Worktime } from './worktime.entity';
 import { WorktimeService } from './worktime.service';
 
 @Controller('worktime')
@@ -13,7 +14,7 @@ export class WorktimeController {
   }
 
   @Post()
-  async saveStartTime(@Body() createWorkTimeDto: WorkTimeDto) {
+  async saveStartTime(@Body() createWorkTimeDto: Worktime) {
     return this.workTimeService.saveTime(createWorkTimeDto);
   }
 
